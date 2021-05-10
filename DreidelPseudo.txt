@@ -1,0 +1,42 @@
+Player class
+	private data
+		Player's name (playerName)
+		Player's tokens (numOfTokens)
+	public data
+		Constructor: Sets Name and # of Tokens
+		recieveTokens method: (parameter: int tokensWon)
+			numOfTokens += tokensWon (no return value)
+		Getter method:
+			return playerName
+		lostToken() method:
+			numOfTokens-- (no return value)
+		printInfo() method:
+			display playerName and numOfTokens
+
+Driver class
+	Main method
+		Get player names: Create 2 instances of Player class
+		Variable: potTokens (0 tokens to start)
+		Variable: r Random number for the Dreidel
+		Variable: continuePlay = ""
+		Array: players[player1 class, player2 class]
+	
+		While continuePlay != n
+			Ante up: potTokens = 2, call lostToken() for each player
+			for loop i = 0; i < players.length; i++
+				players[i] spins: r.nextInt(4) + 1
+					if 1: NUN, Nothing happens
+					if 2: GIMMEL, recieve all tokens, call players[i].recieveTokens() method, potTokens = 0
+					if 3: HEY, recieve half the pot, if the pot is odd (5) the odd number remains (3) then players[i].recieveTokens(2)
+					if 4: SHIN, players[i].lostToken()
+			continuePlay?
+			if continuePlay = "y"
+				repeat
+			if continuePlay = "n"
+				exit
+
+		Display winner playerName
+		Display playerName/s and numOfTokens/s
+		
+		
+			
